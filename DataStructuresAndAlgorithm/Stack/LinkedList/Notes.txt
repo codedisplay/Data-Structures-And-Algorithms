@@ -1,0 +1,8 @@
+﻿Pros: 
+No hard-size(depth) limit
+Easy to implement
+
+Cons:
+Memory allocation on push(everytime)
+Per-node memory overhead
+Potential performance issues(data locality problems and data fragmentation)
