@@ -124,43 +124,43 @@ namespace DataStructuresAndAlgorithm.Shortest_Path.Dijkstra
         }
     }
 
-    public class KeyComparer<TSource, TKey> : Comparer<TSource>
-    {
-        private readonly Func<TSource, TKey> _keySelector;
-        private readonly IComparer<TKey> _innerComparer;
+    //public class KeyComparer<TSource, TKey> : Comparer<TSource>
+    //{
+    //    private readonly Func<TSource, TKey> _keySelector;
+    //    private readonly IComparer<TKey> _innerComparer;
 
-        protected internal KeyComparer(
-            Func<TSource, TKey> keySelector,
-            IComparer<TKey> innerComparer = null)
-        {
-            _keySelector = keySelector;
-            _innerComparer = innerComparer ?? Comparer<TKey>.Default;
-        }
+    //    protected internal KeyComparer(
+    //        Func<TSource, TKey> keySelector,
+    //        IComparer<TKey> innerComparer = null)
+    //    {
+    //        _keySelector = keySelector;
+    //        _innerComparer = innerComparer ?? Comparer<TKey>.Default;
+    //    }
 
-        public override int Compare(TSource x, TSource y)
-        {
-            if (object.ReferenceEquals(x, y))
-                return 0;
-            if (x == null)
-                return -1;
-            if (y == null)
-                return 1;
+    //    public override int Compare(TSource x, TSource y)
+    //    {
+    //        if (object.ReferenceEquals(x, y))
+    //            return 0;
+    //        if (x == null)
+    //            return -1;
+    //        if (y == null)
+    //            return 1;
 
-            TKey xKey = _keySelector(x);
-            TKey yKey = _keySelector(y);
-            return _innerComparer.Compare(xKey, yKey);
-        }
-    }
+    //        TKey xKey = _keySelector(x);
+    //        TKey yKey = _keySelector(y);
+    //        return _innerComparer.Compare(xKey, yKey);
+    //    }
+    //}
 
-    public static class KeyComparer
-    {
-        public static KeyComparer<TSource, TKey> Create<TSource, TKey>(
-            Func<TSource, TKey> keySelector,
-            IComparer<TKey> innerComparer = null)
-        {
-            return new KeyComparer<TSource, TKey>(keySelector, innerComparer);
-        }
-    }
+    //public static class KeyComparer
+    //{
+    //    public static KeyComparer<TSource, TKey> Create<TSource, TKey>(
+    //        Func<TSource, TKey> keySelector,
+    //        IComparer<TKey> innerComparer = null)
+    //    {
+    //        return new KeyComparer<TSource, TKey>(keySelector, innerComparer);
+    //    }
+    //}
 
     public class Dijkstra
     {

@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DataStructuresAndAlgorithmTests
 {
     [TestClass]
-    public class ShortestPathTest
+    public class ShortestPathTests
     {
         [TestMethod]
         public void TestMethod1()
